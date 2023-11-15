@@ -6,35 +6,22 @@ import CompanyDetails from '../companies/CompanyDetails';
 import CompanyList from '../companies/CompanyList';
 import Homepage from '../homepage/Homepage';
 import JobList from '../jobs/JobList';
-import ProfileForm from '../profiles/ProfileForm';
+import ProfileForm from '../profile/ProfileForm';
 
-function Routes() {
+function AppRoutes() {
   return (
     <Switch>
-      <Route exact path="/">
-        <Homepage />
-      </Route>
-      <Route path="/login">
-        <LoginForm />
-      </Route>
-      <Route path="/signup">
-        <SignupForm />
-      </Route>
-      <Route path="/companies/:handle">
-        <CompanyDetails />
-      </Route>
-      <Route path="/companies">
-        <CompanyList />
-      </Route>
-      <Route path="/jobs">
-        <JobList />
-      </Route>
-      <Route path="/profile">
-        <ProfileForm />
-      </Route>
-      {/* add more routes here as needed */}
+      <Route exact path="/" component={Homepage} />
+      <Route path="/login" component={LoginForm} />
+      <Route path="/signup" component={SignupForm} />
+      <Route path="/companies/:handle" component={CompanyDetails} />
+      <Route path="/companies" component={CompanyList} />
+      <Route path="/jobs" component={JobList} />
+      <Route path="/profile" component={ProfileForm} />
+      {/* Add more routes as needed */}
     </Switch>
   );
 }
 
-export default Routes;
+export default AppRoutes;
+
