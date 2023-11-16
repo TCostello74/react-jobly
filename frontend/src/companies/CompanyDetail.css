@@ -1,0 +1,11 @@
+.company-detail-container {
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    background-color: #f9f9f9;
+  }
+  
+  .company-detail-header {
+    margin-top: 0;
+  }
+  

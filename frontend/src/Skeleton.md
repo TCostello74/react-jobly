@@ -18,3 +18,11 @@ src/
 |   |-- Routes.js
 |-- App.js
 |-- index.js
+
+
+Its like this:
+project-root/
+|-- backend/
+|-- frontend/
+|   |-- src/
+|-- api.js
