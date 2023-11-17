@@ -1,17 +1,40 @@
-/* NavBar.css */
 nav {
-    background-color: #333;
-    color: white;
-    padding: 1em;
-  }
-  
-  nav a {
-    color: white;
-    margin-right: 1em;
-    text-decoration: none;
-  }
-  
-  nav a:hover {
-    text-decoration: underline;
-  }
-  
+  background-color: #333;
+  color: white;
+  padding: 1em;
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center; 
+}
+
+nav a {
+  color: white;
+  margin-right: 1em;
+  text-decoration: none;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+.nav-left, .nav-right {
+  display: flex; 
+  align-items: center;
+}
+
+.nav-right {
+  gap: 1em; 
+}
+
+.nav-right button {
+  background: none;
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding: 0.5em 1em;
+  margin-left: 1em;
+}
+
+.nav-right button:hover {
+  text-decoration: underline;
+}
