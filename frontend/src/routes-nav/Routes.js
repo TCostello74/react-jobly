@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Switch } from 'react-router-dom';
+import { Route, Switch, useHistory } from 'react-router-dom';
 import LoginForm from '../auth/LoginForm';
 import SignupForm from '../auth/SignupForm';
 import CompanyDetail from '../companies/CompanyDetail';
@@ -10,6 +10,8 @@ import ProfileForm from '../profile/ProfileForm';
 import PrivateRoute from './PrivateRoute';
 
 function AppRoutes({ login, signup }) {
+  const history = useHistory();
+
   return (
     <Switch>
       <Route exact path="/">
@@ -17,11 +19,11 @@ function AppRoutes({ login, signup }) {
       </Route>
 
       <Route path="/login">
-        <LoginForm login={login} />
+        <LoginForm login={login} history={history}/>
       </Route>
 
       <Route path="/signup">
-        <SignupForm signup={signup} />
+        <SignupForm signup={signup} history={history}/>
       </Route>
 
       <PrivateRoute path="/companies/:handle">
