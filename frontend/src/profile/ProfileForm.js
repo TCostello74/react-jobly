@@ -54,6 +54,7 @@ function ProfileForm() {
           value={formData.password}
           onChange={handleChange}
           type="password"
+          placeholder="password"
         />
         <button>Save Changes</button>
       </form>
