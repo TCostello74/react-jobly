@@ -4,12 +4,13 @@ import NavBar from './routes-nav/NavBar';
 import AppRoutes from './routes-nav/Routes';
 import JoblyApi from './api/api'; 
 import UserContext from './auth/UserContext';
-import { jwtDecode } from 'jwt-decode'; 
+import { jwtDecode } from 'jwt-decode';
+import useLocalStorage from './hooks/useLocalStorage';
 
 
 function App() {
   const [currentUser, setCurrentUser] = useState(null);
-  const [token, setToken] = useState(null);
+  const [token, setToken] = useLocalStorage('jobly-token');
 
 
   // Handle user login
