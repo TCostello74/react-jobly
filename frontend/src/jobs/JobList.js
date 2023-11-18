@@ -22,7 +22,8 @@ function JobList() {
       <SearchForm searchFor={search} />
       {jobs.map(job => (
         <JobCard
-          key={job.id} // Assuming each job has a unique ID
+          key={job.id}
+          id={job.id} 
           title={job.title}
           salary={job.salary}
           equity={job.equity}

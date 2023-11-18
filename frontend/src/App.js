@@ -63,7 +63,7 @@ function App() {
     async function getCurrentUser() {
       if (token) {
         try {
-          const { username } = jwtDecode(token); // Corrected usage
+          const { username } = jwtDecode(token); 
           JoblyApi.token = token;
           const currentUser = await JoblyApi.getCurrentUser(username);
           setCurrentUser(currentUser);
@@ -75,10 +75,26 @@ function App() {
     getCurrentUser();
   }, [token]);
 
+  const applyToJob = async (id) => {
+    console.log("Applying to job with ID:", id);
+    if (!currentUser.applications.includes(id)) {
+      try {
+        await JoblyApi.applyToJob(currentUser.username, id);
+        setCurrentUser(user => ({
+          ...user,
+          applications: [...user.applications, id]
+        }));
+      } catch (errors) {
+        console.error("Apply to job failed", errors);
+        
+      }
+    }
+  };
+
 
   return (
     <Router>
-      <UserContext.Provider value={{ currentUser, setCurrentUser, login, logout, signup }}>
+      <UserContext.Provider value={{ currentUser, setCurrentUser, login, logout, signup, applyToJob }}>
         <NavBar logout={logout} />
         <AppRoutes login={login} signup={signup} />
       </UserContext.Provider>
